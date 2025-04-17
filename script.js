@@ -26,9 +26,9 @@ window.onload = async function loadAnnouncements() {
         }
 
         data.forEach((item, index) => {
-            console.log("Rendering item #" + (index + 1) + ":", JSON.stringify(item));
+            console.log(`Rendering item #${index + 1}:`, item);
             const li = document.createElement('li');
-            li.textContent = item.announcement || "Missing text";
+            li.textContent = item.title || item.announcement || JSON.stringify(item) || "Missing text";
             list.appendChild(li);
         });
 
