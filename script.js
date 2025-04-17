@@ -27,13 +27,20 @@ window.onload = async function loadAnnouncements() {
 
         data.forEach((item, index) => {
             console.log(`Rendering item #${index + 1}:`, item);
+
+            // Ensure the announcement text exists and is properly formatted
+            const announcementText = item.announcement || "Missing text";
             const li = document.createElement('li');
-            li.textContent = item.announcement || "Missing text";
+            li.textContent = announcementText;
+
+            // Append to the list
             list.appendChild(li);
         });
 
     } catch (error) {
         console.error("Error fetching announcements:", error);
+
+        // Show error message in the list if there's an issue
         const list = document.getElementById('announcementList');
         if (list) {
             list.innerHTML = '<li>Error loading announcements. Please try again later.</li>';
