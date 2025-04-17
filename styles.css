@@ -36,6 +36,10 @@ body {
     max-width: 600px;
     width: 90%;
     box-sizing: border-box;
+    max-height: 500px;
+    /* Limit height */
+    overflow-y: auto;
+    /* Enables vertical scroll */
 }
 
 /* Logo */
