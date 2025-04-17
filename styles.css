@@ -1,61 +1,75 @@
+/* Reset + Base styles */
 body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    background: linear-gradient(-90deg, #e756e7, #44349e, #fbc2eb, #0e3068);
-    background-size: 400% 400%;
-    animation: gradient 20s ease infinite;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(-90deg, #e756e7, #44349e, #fbc2eb, #0e3068);
+    background-size: 400% 400%;
+    animation: gradient 20s ease infinite;
+    color: #222;
 }
 
 @keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
+/* Wrapper */
 .announcement-wrapper {
-    background-color: rgba(255, 255, 255, 0.95);
-    padding: 30px;
+    background-color: #ffffffcc; /* slightly transparent white */
+    padding: 40px 30px;
     border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    text-align: center;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
     max-width: 600px;
     width: 90%;
+    text-align: center;
 }
 
+/* Logo */
 .logo img {
-    max-width: 120px;
+    max-width: 100px;
     margin-bottom: 20px;
 }
 
+/* Titles */
 .announcement-box h1 {
-    font-size: 30px;
-    margin-bottom: 15px;
-    color: #333;
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #222;
+    letter-spacing: 1px;
 }
 
-#announcementList {
-    list-style-type: none;
-    padding: 0;
+.announcement-box h2 {
+    font-size: 24px;
     color: #555;
+    margin-bottom: 20px;
+}
+
+/* List Styling */
+#announcementList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 #announcementList li {
-    background-color: #f0f8ff;
-    padding: 12px 18px;
-    margin-bottom: 10px;
+    background-color: #eef4ff;
+    color: #333;
+    padding: 14px 18px;
+    margin-bottom: 12px;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    font-size: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+#announcementList li:hover {
+    transform: scale(1.02);
+    background-color: #dfeaff;
 }
