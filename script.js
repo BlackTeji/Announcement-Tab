@@ -4,20 +4,19 @@ const listEl = document.getElementById("announcementList");
 fetch(sheetURL)
     .then(response => response.json())
     .then(data => {
-        listEl.innerHTML = ""; // Clear the loading message
-
+        listEl.innerHTML = "";
         if (data.length === 0) {
             listEl.innerHTML = "<li>No announcements yet!</li>";
             return;
         }
 
-        data.forEach(announcement => {
-            const item = document.createElement("li");
-            item.textContent = announcement.message; // adjust to your column header
-            listEl.appendChild(item);
+        data.forEach(item => {
+            const li = document.createElement("li");
+            li.textContent = item.message;
+            listEl.appendChild(li);
         });
     })
     .catch(error => {
-        listEl.innerHTML = `<li>Error loading announcements. Please try again later.</li>`;
-        console.error("Error fetching announcements:", error);
+        listEl.innerHTML = "<li>Error loading announcements.</li>";
+        console.error(error);
     });

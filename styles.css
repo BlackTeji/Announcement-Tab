@@ -1,32 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
-    background: #f0f4f8;
     margin: 0;
-    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-.container {
-    max-width: 600px;
-    margin: 50px auto;
+.wrapper {
+    padding: 20px;
+}
+
+.announcement-card {
     background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 40px 30px;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.logo img {
+    width: 80px;
+    margin-bottom: 10px;
 }
 
 h1 {
-    text-align: center;
-    color: #333;
+    font-size: 28px;
+    color: #000;
+    margin: 10px 0 20px;
+}
+
+h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 22px;
+    color: #444;
+    margin-bottom: 5px;
 }
 
 ul {
-    list-style: none;
+    text-align: left;
     padding: 0;
+    list-style: decimal inside;
+    color: #222;
+    line-height: 1.7;
 }
 
 li {
-    background: #e3f2fd;
     margin: 10px 0;
-    padding: 15px;
-    border-left: 5px solid #1976d2;
 }
