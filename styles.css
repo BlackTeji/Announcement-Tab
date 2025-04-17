@@ -2,9 +2,9 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    background: linear-gradient(-45deg, #3b57f1, #d42ac6, #fbc2eb, #0e3068);
+    background: linear-gradient(-90deg, #e756e7, #44349e, #fbc2eb, #0e3068);
     background-size: 400% 400%;
-    animation: gradient 10s ease infinite;
+    animation: gradient 20s ease infinite;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
