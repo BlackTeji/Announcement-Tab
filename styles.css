@@ -4,7 +4,7 @@ body {
     height: 100vh;
     background: linear-gradient(-90deg, #e756e7, #44349e, #fbc2eb, #0e3068);
     background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+    animation: gradient 20s ease infinite;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
@@ -34,13 +34,14 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     text-align: center;
     width: 90%;
-    max-width: 700px;
+    max-width: 600px;
     /* Default for large screens */
     max-height: 500px;
     /* Default for large screens */
     box-sizing: border-box;
     overflow-y: auto;
     /* Enables vertical scroll if needed */
+    position: relative;
 }
 
 /* Logo */
@@ -72,35 +73,26 @@ body {
     word-wrap: break-word;
 }
 
-/* Responsive Design for Tablets */
-@media (max-width: 1024px) {
-    .announcement-wrapper {
-        max-width: 80%;
-        /* Make the box a little smaller on tablet */
-        max-height: 450px;
-        /* Reduce height slightly */
-    }
-
-    .announcement-box h1 {
-        font-size: 28px;
-    }
-
-    #announcementList li {
-        padding: 10px 16px;
-    }
-
-    .logo img {
-        max-width: 100px;
-    }
-}
-
-/* Responsive Design for Phones */
+/* Add a subtle shadow at the bottom for mobile to indicate scroll */
 @media (max-width: 768px) {
     .announcement-wrapper {
         max-width: 90%;
         /* Make the box more compact on smaller screens */
-        max-height: 450px;
+        max-height: 350px;
         /* Adjust height for phones */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 -20px 10px rgba(0, 0, 0, 0.1);
+        /* Subtle shadow at the top and bottom */
+    }
+
+    /* Show a "scroll indicator" on mobile: fade-out effect at the bottom */
+    .announcement-wrapper::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
     }
 
     .announcement-box h1 {
@@ -116,25 +108,32 @@ body {
     }
 }
 
-/* Extra Small Screens (Below 480px) */
-@media (max-width: 480px) {
+/* Responsive Design for Tablets */
+@media (max-width: 1024px) {
     .announcement-wrapper {
-        padding: 15px;
-        max-width: 90%;
-        /* Maintain compact size */
+        max-width: 80%;
         max-height: 400px;
-        /* Smaller height for very small screens */
     }
 
     .announcement-box h1 {
-        font-size: 22px;
+        font-size: 28px;
     }
 
     #announcementList li {
-        padding: 6px 10px;
+        padding: 10px 16px;
     }
 
     .logo img {
-        max-width: 70px;
+        max-width: 100px;
+    }
+}
+
+/* Responsive Design for Desktop/Laptops */
+@media (min-width: 1025px) {
+    .announcement-wrapper {
+        max-width: 600px;
+        /* Default size for large screens */
+        max-height: 500px;
+        /* Default height */
     }
 }
