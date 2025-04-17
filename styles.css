@@ -4,7 +4,7 @@ body {
     height: 100vh;
     background: linear-gradient(-90deg, #e756e7, #44349e, #fbc2eb, #0e3068);
     background-size: 400% 400%;
-    animation: gradient 20s ease infinite;
+    animation: gradient 15s ease infinite;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
@@ -34,7 +34,7 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     text-align: center;
     width: 90%;
-    max-width: 600px;
+    max-width: 700px;
     /* Default for large screens */
     max-height: 500px;
     /* Default for large screens */
@@ -77,7 +77,7 @@ body {
     .announcement-wrapper {
         max-width: 80%;
         /* Make the box a little smaller on tablet */
-        max-height: 400px;
+        max-height: 450px;
         /* Reduce height slightly */
     }
 
@@ -99,7 +99,7 @@ body {
     .announcement-wrapper {
         max-width: 90%;
         /* Make the box more compact on smaller screens */
-        max-height: 350px;
+        max-height: 450px;
         /* Adjust height for phones */
     }
 
@@ -122,7 +122,7 @@ body {
         padding: 15px;
         max-width: 90%;
         /* Maintain compact size */
-        max-height: 300px;
+        max-height: 400px;
         /* Smaller height for very small screens */
     }
 
