@@ -1,5 +1,5 @@
 // Replace this with your actual deployed Google Apps Script URL
-const sheetURL = 'https://script.google.com/macros/s/AKfycbyLltyKvcusA05NoFzArb3kF3Dr2JWSn7n2QpbJnoDWG2cUHs00eL5MyJLTkDH9n10ung/exec';
+const sheetURL = 'https://script.google.com/macros/s/AKfycbzSqFKX1xGzEEv7VrPs67t4b_CcK4CB7J5krL-Xb7EdEmjWmDNU2amn6t5YnAkDQieryg/exec';
 
 window.onload = async function loadAnnouncements() {
     console.log("Script loaded. Fetching announcements...");
@@ -28,7 +28,7 @@ window.onload = async function loadAnnouncements() {
         data.forEach((item, index) => {
             console.log(`Rendering item #${index + 1}:`, item);
             const li = document.createElement('li');
-            li.textContent = item.title || item.announcement || JSON.stringify(item) || "Missing text";
+            li.textContent = item.announcement || "Missing text";
             list.appendChild(li);
         });
 
