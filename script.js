@@ -1,60 +1,23 @@
-// script.js
-const announcementList = document.getElementById("announcementList");
-const addBtn = document.getElementById("addAnnouncementBtn");
-const newAnnouncementInput = document.getElementById("newAnnouncementInput");
-const closeBtn = document.getElementById("closeAnnouncements");
-const container = document.getElementById("announcementContainer");
+const sheetURL = "https://script.google.com/macros/s/AKfycbyLltyKvcusA05NoFzArb3kF3Dr2JWSn7n2QpbJnoDWG2cUHs00eL5MyJLTkDH9n10ung/exec";
+const listEl = document.getElementById("announcementList");
 
-// Sample starter announcements
-const announcements = [
-    "🎉 Public holiday on Monday! Time to flex small 😎",
-    "🕒 System maintenance at 11pm tonight. No panic, abeg.",
-    "🚨 Please submit your reports before Friday noon!"
-];
+fetch(sheetURL)
+    .then(response => response.json())
+    .then(data => {
+        listEl.innerHTML = ""; // Clear the loading message
 
-function renderAnnouncements() {
-    announcementList.innerHTML = "";
-    if (announcements.length === 0) {
-        const li = document.createElement("li");
-        li.textContent = "No new announcements. Enjoy your day! 🎈";
-        li.style.fontStyle = "italic";
-        announcementList.appendChild(li);
-        return;
-    }
+        if (data.length === 0) {
+            listEl.innerHTML = "<li>No announcements yet!</li>";
+            return;
+        }
 
-    announcements.forEach((announcement, index) => {
-        const li = document.createElement("li");
-        li.textContent = announcement;
-
-        const removeBtn = document.createElement("button");
-        removeBtn.textContent = "✖️";
-        removeBtn.style.marginLeft = "10px";
-        removeBtn.style.cursor = "pointer";
-        removeBtn.style.border = "none";
-        removeBtn.style.background = "transparent";
-        removeBtn.onclick = () => {
-            announcements.splice(index, 1);
-            renderAnnouncements();
-        };
-
-        li.appendChild(removeBtn);
-        announcementList.appendChild(li);
+        data.forEach(announcement => {
+            const item = document.createElement("li");
+            item.textContent = announcement.message; // adjust to your column header
+            listEl.appendChild(item);
+        });
+    })
+    .catch(error => {
+        listEl.innerHTML = `<li>Error loading announcements. Please try again later.</li>`;
+        console.error("Error fetching announcements:", error);
     });
-}
-
-addBtn.addEventListener("click", () => {
-    const value = newAnnouncementInput.value.trim();
-    if (value === "") {
-        alert("Oga, type something first!");
-        return;
-    }
-    announcements.unshift(value);
-    newAnnouncementInput.value = "";
-    renderAnnouncements();
-});
-
-closeBtn.addEventListener("click", () => {
-    container.style.display = "none";
-});
-
-window.addEventListener("load", renderAnnouncements);
