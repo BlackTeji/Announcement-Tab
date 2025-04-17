@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a1c4fd);
+    background: linear-gradient(-45deg, #3b57f1, #d42ac6, #fbc2eb, #0e3068);
     background-size: 400% 400%;
     animation: gradient 10s ease infinite;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -41,7 +41,7 @@ body {
 }
 
 .announcement-box h1 {
-    font-size: 28px;
+    font-size: 30px;
     margin-bottom: 15px;
     color: #333;
 }
