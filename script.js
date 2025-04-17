@@ -10,21 +10,33 @@ window.onload = async function loadAnnouncements() {
         console.log("Fetched data:", data);
 
         const list = document.getElementById('announcementList');
-        list.innerHTML = ''; // Clear existing list
+        console.log("Found list element:", list);
 
-        if (data.length === 0) {
-            list.innerHTML = '<li>No announcements available.</li>';
-        } else {
-            data.forEach(item => {
-                const li = document.createElement('li');
-                li.textContent = item.announcement;
-                list.appendChild(li);
-            });
+        if (!list) {
+            console.error("announcementList not found in the DOM!");
+            return;
         }
+
+        list.innerHTML = ''; // Clear placeholder
+
+        if (!data || data.length === 0) {
+            list.innerHTML = '<li>No announcements available.</li>';
+            console.warn("Data array is empty.");
+            return;
+        }
+
+        data.forEach((item, index) => {
+            console.log(`Rendering item #${index + 1}:`, item);
+            const li = document.createElement('li');
+            li.textContent = item.announcement || "Missing text";
+            list.appendChild(li);
+        });
 
     } catch (error) {
         console.error("Error fetching announcements:", error);
         const list = document.getElementById('announcementList');
-        list.innerHTML = '<li>Error loading announcements. Please try again later.</li>';
+        if (list) {
+            list.innerHTML = '<li>Error loading announcements. Please try again later.</li>';
+        }
     }
 };
