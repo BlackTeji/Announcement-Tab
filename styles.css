@@ -1,54 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
 }
 
-.wrapper {
-    padding: 20px;
-}
-
-.announcement-card {
-    background: white;
-    border-radius: 15px;
-    padding: 40px 30px;
-    max-width: 600px;
+.container {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    max-width: 500px;
+    width: 90%;
     text-align: center;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
-.logo img {
-    width: 80px;
-    margin-bottom: 10px;
+.logo {
+    max-width: 100px;
+    margin-bottom: 20px;
 }
 
-h1 {
-    font-size: 28px;
-    color: #000;
-    margin: 10px 0 20px;
+.title {
+    font-size: 1.8rem;
+    margin: 0;
+    font-weight: 600;
 }
 
-h2 {
-    font-family: 'Pacifico', cursive;
-    font-size: 22px;
-    color: #444;
-    margin-bottom: 5px;
+.subtitle {
+    margin: 20px 0 10px;
+    font-size: 1.2rem;
+    color: #555;
 }
 
-ul {
+.announcement-list {
+    list-style-type: decimal;
+    padding-left: 0;
+    margin: 0;
     text-align: left;
-    padding: 0;
-    list-style: decimal inside;
-    color: #222;
-    line-height: 1.7;
 }
 
-li {
-    margin: 10px 0;
+.announcement-list li {
+    margin-bottom: 12px;
+    line-height: 1.6;
 }
