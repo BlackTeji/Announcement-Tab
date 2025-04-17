@@ -1,4 +1,4 @@
-const sheetURL = 'https://script.google.com/macros/s/YOUR_DEPLOYED_SCRIPT_URL_HERE/exec';
+const sheetURL = 'https://script.google.com/macros/s/AKfycbyLltyKvcusA05NoFzArb3kF3Dr2JWSn7n2QpbJnoDWG2cUHs00eL5MyJLTkDH9n10ung/exec';
 
 async function loadAnnouncements() {
     try {
@@ -13,7 +13,7 @@ async function loadAnnouncements() {
         } else {
             data.forEach(item => {
                 const li = document.createElement('li');
-                li.textContent = item.announcement; // Assuming your column is named 'announcement'
+                li.textContent = item.announcement; // 'announcement' must match your column header in Sheets
                 list.appendChild(li);
             });
         }
