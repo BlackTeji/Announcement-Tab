@@ -33,13 +33,14 @@ body {
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     text-align: center;
-    max-width: 600px;
     width: 90%;
+    max-width: 600px;
+    /* Default for large screens */
+    max-height: 500px;
+    /* Default for large screens */
     box-sizing: border-box;
-    max-height: 350px;
-    /* Limit height */
     overflow-y: auto;
-    /* Enables vertical scroll */
+    /* Enables vertical scroll if needed */
 }
 
 /* Logo */
@@ -71,14 +72,17 @@ body {
     word-wrap: break-word;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* Responsive Design for Tablets */
+@media (max-width: 1024px) {
     .announcement-wrapper {
-        padding: 20px;
+        max-width: 80%;
+        /* Make the box a little smaller on tablet */
+        max-height: 400px;
+        /* Reduce height slightly */
     }
 
     .announcement-box h1 {
-        font-size: 26px;
+        font-size: 28px;
     }
 
     #announcementList li {
@@ -90,19 +94,17 @@ body {
     }
 }
 
-@media (max-width: 480px) {
-    body {
-        background-size: 300% 300%;
-        /* Slightly change gradient size on smaller devices */
-    }
-
+/* Responsive Design for Phones */
+@media (max-width: 768px) {
     .announcement-wrapper {
-        padding: 15px;
         max-width: 90%;
+        /* Make the box more compact on smaller screens */
+        max-height: 350px;
+        /* Adjust height for phones */
     }
 
     .announcement-box h1 {
-        font-size: 22px;
+        font-size: 26px;
     }
 
     #announcementList li {
@@ -111,5 +113,28 @@ body {
 
     .logo img {
         max-width: 80px;
+    }
+}
+
+/* Extra Small Screens (Below 480px) */
+@media (max-width: 480px) {
+    .announcement-wrapper {
+        padding: 15px;
+        max-width: 90%;
+        /* Maintain compact size */
+        max-height: 300px;
+        /* Smaller height for very small screens */
+    }
+
+    .announcement-box h1 {
+        font-size: 22px;
+    }
+
+    #announcementList li {
+        padding: 6px 10px;
+    }
+
+    .logo img {
+        max-width: 70px;
     }
 }
