@@ -1,0 +1,111 @@
+/* styles.css */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+}
+
+.announcement-container {
+    width: 400px;
+    background: #fffbea;
+    border: 2px solid #ffa502;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    animation: fadeInUp 0.5s ease;
+}
+
+.announcement-header {
+    background-color: #ffa502;
+    color: white;
+    padding: 12px 16px;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.announcement-header button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#announcementList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#announcementList li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #ffeaa7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slideIn 0.4s ease;
+}
+
+#announcementList li:last-child {
+    border-bottom: none;
+}
+
+.announcement-footer {
+    display: flex;
+    gap: 10px;
+    padding: 12px;
+    border-top: 1px solid #ffeaa7;
+    background-color: #fffbe6;
+}
+
+#newAnnouncementInput {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#addAnnouncementBtn {
+    background-color: #ffa502;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#addAnnouncementBtn:hover {
+    background-color: #e08e00;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
