@@ -61,7 +61,7 @@ body {
 /* Logo image */
 .logo img {
     max-width: 120px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 
 /* Headings */
@@ -69,12 +69,14 @@ body {
     font-size: 30px;
     margin-bottom: 10px;
     color: #333;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .announcement-box h2 {
     font-size: 22px;
     margin-bottom: 15px;
     color: #555;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 /* Scroll hint (only on small screens) */
@@ -83,6 +85,7 @@ body {
     color: #888;
     margin-bottom: 10px;
     display: none;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 /* List container */
@@ -95,11 +98,13 @@ body {
 
 /* Each announcement item */
 #announcementList li {
+    font-family: 'Times New Roman', Times, serif;
     background-color: #f0f8ff;
     padding: 12px 18px;
     margin-bottom: 10px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
     text-align: left;
     word-wrap: break-word;
 }
