@@ -34,6 +34,7 @@ body {
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     text-align: center;
+    /* Center the text for headings */
     max-width: 600px;
     width: 90%;
     overflow: hidden;
@@ -74,11 +75,12 @@ body {
     padding: 0;
     color: #555;
     max-height: 300px;
-    /* Limit height for scrolling */
     overflow-y: auto;
     /* Add scroll bar if content overflows */
     margin: 0;
     padding-left: 0;
+    text-align: left;
+    /* Align the text to the left */
 }
 
 /* Styling for each list item (announcement) */
@@ -105,16 +107,16 @@ p {
     font-size: 16px;
 }
 
-/* Responsive Design for Mobile Devices */
+/* Responsive Design for Tablets */
 @media (max-width: 768px) {
     .announcement-wrapper {
         padding: 20px;
-        width: 80%;
-        /* Narrower box for tablets */
+        width: 85%;
+        /* Slightly narrower box for tablets */
     }
 
     .announcement-box h1 {
-        font-size: 26px;
+        font-size: 24px;
     }
 
     .announcement-box h2 {
@@ -135,10 +137,10 @@ p {
     }
 
     .announcement-box h1 {
-        font-size: 22px;
+        font-size: 20px;
     }
 
     .announcement-box h2 {
-        font-size: 18px;
+        font-size: 16px;
     }
 }
