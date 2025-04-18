@@ -1,4 +1,4 @@
-/* General Body Styling */
+/* Body and animated background */
 body {
     margin: 0;
     padding: 0;
@@ -12,7 +12,6 @@ body {
     align-items: center;
 }
 
-/* Animation for Background Gradient */
 @keyframes gradient {
     0% {
         background-position: 0% 50%;
@@ -27,120 +26,128 @@ body {
     }
 }
 
-/* Announcement Box Styling */
+/* Wrapper box for the announcement area */
 .announcement-wrapper {
     background-color: rgba(255, 255, 255, 0.95);
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     text-align: center;
-    /* Center the text for headings */
-    max-width: 600px;
-    width: 90%;
-    overflow: hidden;
+    width: 95%;
+    max-width: 800px;
+    max-height: 600px;
+    overflow-y: auto;
     position: relative;
+    transition: max-height 0.3s ease;
 }
 
-/* Logo Styling */
+/* Shadow fade at the bottom for scroll indicator */
+.announcement-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 100%);
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.announcement-wrapper.show-shadow::after {
+    visibility: visible;
+}
+
+/* Logo image */
 .logo img {
     max-width: 120px;
     margin-bottom: 20px;
 }
 
-/* Main Heading Styling */
+/* Headings */
 .announcement-box h1 {
     font-size: 30px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     color: #333;
 }
 
-/* Subheading for Announcements */
 .announcement-box h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #44349e;
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #555;
 }
 
-/* Scroll hint for mobile devices */
+/* Scroll hint (only on small screens) */
 .scroll-hint {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
     display: none;
-    font-size: 18px;
-    color: #999;
-    margin-bottom: 20px;
 }
 
-/* Styling for the Announcement List */
+/* List container */
 #announcementList {
     list-style-type: none;
     padding: 0;
-    color: #555;
-    max-height: 300px;
-    overflow-y: auto;
-    /* Add scroll bar if content overflows */
     margin: 0;
-    padding-left: 0;
-    text-align: left;
-    /* Align the text to the left */
+    color: #555;
 }
 
-/* Styling for each list item (announcement) */
+/* Each announcement item */
 #announcementList li {
     background-color: #f0f8ff;
     padding: 12px 18px;
     margin-bottom: 10px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    font-size: 16px;
+    text-align: left;
+    word-wrap: break-word;
 }
 
-/* Styling for Bulleted Lists */
-ul {
-    list-style-type: disc;
-    padding-left: 20px;
-    margin: 10px 0;
-}
-
-/* Paragraph Styling */
-p {
-    margin: 10px 0;
-    color: #333;
-    font-size: 16px;
-}
-
-/* Responsive Design for Tablets */
-@media (max-width: 768px) {
+/* Tablet responsiveness */
+@media (max-width: 1024px) {
     .announcement-wrapper {
-        padding: 20px;
-        width: 85%;
-        /* Slightly narrower box for tablets */
+        max-width: 90%;
+        max-height: 500px;
     }
 
     .announcement-box h1 {
-        font-size: 24px;
+        font-size: 26px;
     }
 
     .announcement-box h2 {
         font-size: 20px;
+    }
+
+    .logo img {
+        max-width: 100px;
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .announcement-wrapper {
+        max-width: 95%;
+        max-height: 400px;
+    }
+
+    .announcement-box h1 {
+        font-size: 22px;
+    }
+
+    .announcement-box h2 {
+        font-size: 18px;
+    }
+
+    #announcementList li {
+        padding: 10px 14px;
+    }
+
+    .logo img {
+        max-width: 80px;
     }
 
     .scroll-hint {
         display: block;
-    }
-}
-
-/* For very small screens like phones */
-@media (max-width: 480px) {
-    .announcement-wrapper {
-        padding: 15px;
-        width: 90%;
-        /* Narrower box for smaller phones */
-    }
-
-    .announcement-box h1 {
-        font-size: 20px;
-    }
-
-    .announcement-box h2 {
-        font-size: 16px;
     }
 }
