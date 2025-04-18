@@ -1,3 +1,4 @@
+/* Body and animated background */
 body {
     margin: 0;
     padding: 0;
@@ -11,7 +12,6 @@ body {
     align-items: center;
 }
 
-/* Gradient Animation */
 @keyframes gradient {
     0% {
         background-position: 0% 50%;
@@ -26,101 +26,97 @@ body {
     }
 }
 
-/* Announcement Wrapper */
+/* Wrapper box for the announcement area */
 .announcement-wrapper {
     background-color: rgba(255, 255, 255, 0.95);
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     text-align: center;
-    width: 90%;
-    max-width: 600px;
-    /* Default for large screens */
-    max-height: 500px;
-    /* Default for large screens */
-    box-sizing: border-box;
+    width: 95%;
+    max-width: 800px;
+    max-height: 600px;
     overflow-y: auto;
-    /* Enables vertical scroll if needed */
     position: relative;
+    transition: max-height 0.3s ease;
 }
 
-/* Logo */
+/* Shadow fade at the bottom for scroll indicator */
+.announcement-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 100%);
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.announcement-wrapper.show-shadow::after {
+    visibility: visible;
+}
+
+/* Logo image */
 .logo img {
     max-width: 120px;
     margin-bottom: 20px;
 }
 
-/* Title */
+/* Headings */
 .announcement-box h1 {
     font-size: 30px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     color: #333;
 }
 
-/* Announcements List */
-#announcementList {
-    list-style-type: none;
-    padding: 0;
+.announcement-box h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
     color: #555;
 }
 
+/* Scroll hint (only on small screens) */
+.scroll-hint {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+    display: none;
+}
+
+/* List container */
+#announcementList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    color: #555;
+}
+
+/* Each announcement item */
 #announcementList li {
-    background-color: #f0f8ff;
+    background-color: #d3dee7;
     padding: 12px 18px;
     margin-bottom: 10px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
     word-wrap: break-word;
 }
 
-/* Add a subtle shadow at the bottom for mobile to indicate scroll */
-@media (max-width: 768px) {
+/* Tablet responsiveness */
+@media (max-width: 1024px) {
     .announcement-wrapper {
         max-width: 90%;
-        /* Make the box more compact on smaller screens */
-        max-height: 350px;
-        /* Adjust height for phones */
-    }
-
-    /* Show a "scroll indicator" on mobile: fade-out effect at the bottom */
-    .announcement-wrapper::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 40px;
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
-        visibility: hidden;
-        /* Hidden by default */
+        max-height: 500px;
     }
 
     .announcement-box h1 {
         font-size: 26px;
     }
 
-    #announcementList li {
-        padding: 8px 12px;
-    }
-
-    .logo img {
-        max-width: 80px;
-    }
-}
-
-/* Responsive Design for Tablets */
-@media (max-width: 1024px) {
-    .announcement-wrapper {
-        max-width: 80%;
-        max-height: 400px;
-    }
-
-    .announcement-box h1 {
-        font-size: 28px;
-    }
-
-    #announcementList li {
-        padding: 10px 16px;
+    .announcement-box h2 {
+        font-size: 20px;
     }
 
     .logo img {
@@ -128,12 +124,30 @@ body {
     }
 }
 
-/* Responsive Design for Desktop/Laptops */
-@media (min-width: 1025px) {
+/* Mobile responsiveness */
+@media (max-width: 768px) {
     .announcement-wrapper {
-        max-width: 600px;
-        /* Default size for large screens */
-        max-height: 500px;
-        /* Default height */
+        max-width: 95%;
+        max-height: 400px;
+    }
+
+    .announcement-box h1 {
+        font-size: 22px;
+    }
+
+    .announcement-box h2 {
+        font-size: 18px;
+    }
+
+    #announcementList li {
+        padding: 10px 14px;
+    }
+
+    .logo img {
+        max-width: 80px;
+    }
+
+    .scroll-hint {
+        display: block;
     }
 }
