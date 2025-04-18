@@ -125,9 +125,9 @@ body {
 }
 
 /* Mobile responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 668px) {
     .announcement-wrapper {
-        max-width: 95%;
+        max-width: 90%;
         max-height: 400px;
     }
 
